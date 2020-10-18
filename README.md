@@ -4,11 +4,7 @@ Code written in *Tensorflow.keras*
 ## Description
 Classify emotion into 8 emotion categories.
 
-## Architecture
-![MG network architecture](https://github.com/lucinda-lim/Image-Emotion-Classification/blob/master/assets/Architecture.PNG)
-
-## Late Fusion Method
-![Late Fusion](https://github.com/lucinda-lim/Image-Emotion-Classification/blob/master/assets/late_fusion.PNG)
+![MG network architecture](https://github.com/lucinda-lim/Image-Emotion-Classification/blob/master/assets/image.PNG)
 
 ## Train
 1. Download [FI dataset](https://www.cs.rochester.edu/u/qyou/deepemotion/) 
