@@ -14,7 +14,7 @@ Details at *research_paper.pdf*
 <insert result table /confusion matrix>
 
 ## Train
-1. Download [FI dataset] (https://www.cs.rochester.edu/u/qyou/deepemotion/) 
+1. Download [FI dataset](https://www.cs.rochester.edu/u/qyou/deepemotion/) 
 2. Store images in `data` folder groupby emotion classes.
 2. Split data with `'split_data.py'`
 3. Run `object.py` and `places.py` (Change directory to `training_models` folder)
