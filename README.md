@@ -21,12 +21,12 @@ Details at *research_paper.pdf*
 4. Run `late_fusion2.py` (Switch directory to `training_models` folder)
 
 **Use Pretrained Models**
-1. Download *FI pretrained weights* https://drive.google.com/drive/folders/1Gm5fyY8bthkENOsTxR9oe08r15wc7vyV?usp=sharing, Store them in 'pretrained_models' folder
+1. Download *FI pretrained weights* https://drive.google.com/drive/folders/1Gm5fyY8bthkENOsTxR9oe08r15wc7vyV?usp=sharing, Store them in `pretrained_models` folder
 2. Store test images in 'data/test' folder.
-3. Run 'late_fusion2.py'
+3. Run `late_fusion2.py`
 
-**Demo**
-1. !pip install streamlit
+**Demo App with Streamlit**
+1. `!pip install streamlit`
 2. Run `demo.py` script with command `streamlit run demo.py`
 
 **Acknowledgement**
