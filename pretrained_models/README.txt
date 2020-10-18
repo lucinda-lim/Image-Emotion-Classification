@@ -1,1 +1,1 @@
-## Folder that stores trained models
+## Folder that stores already trained models
