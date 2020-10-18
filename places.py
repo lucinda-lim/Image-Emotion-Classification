@@ -30,7 +30,6 @@ EPOCHS=50
 
 ## Functions
 def data_generator():
-
     train_datagen = ImageDataGenerator( 
           horizontal_flip=True,
           vertical_flip=True,
@@ -58,8 +57,7 @@ def data_generator():
             class_mode='categorical',
             shuffle=False)
 
-def compile_and_train(model,MODEL_NAME):
-    
+def compile_and_train(model,MODEL_NAME):    
     model.compile(loss='categorical_crossentropy',
                   optimizer=optimizers.SGD(lr=0.001),
                   metrics=['acc'])
@@ -96,8 +94,7 @@ def predict_result(model,testing_generator):
     errors = np.where(predicted_classes != ground_truth)[0]
     accuracy= round((100-((len(errors)/testing_generator.samples)*100)), 2)
     print("No of errors = {}/{}".format(len(errors),testing_generator.samples))
-    print('Accuracy : ',accuracy , '%')
-    
+    print('Accuracy : ',accuracy , '%')    
     return accuracy    
 
 def VGG16_Places365(include_top=True, weights='places',
