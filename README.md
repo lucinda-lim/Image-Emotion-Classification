@@ -11,11 +11,11 @@ Classify emotion into 8 emotion categories.
 2. Store images in `data` folder groupby emotion classes.
 2. Split data with `'split_data.py'`
 3. Run `object.py` and `places.py` (Change directory to `training_models` folder)
-4. Run `late_fusion2.py` (Switch directory to `training_models` folder)
+4. Run `late_fusion2.py` (Change directory to `training_models` folder)
 
 ## Use Pretrained Models 
 1. Download [FI pretrained weights](https://drive.google.com/drive/folders/1Gm5fyY8bthkENOsTxR9oe08r15wc7vyV?usp=sharing), Store them in `pretrained_models` folder
-2. Store test images in 'data/test' folder.
+2. Store test images in `data/test` folder.
 3. Run `late_fusion2.py`
 
 ## Demo App with Streamlit
