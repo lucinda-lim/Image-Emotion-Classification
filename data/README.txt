@@ -1,1 +1,1 @@
-## Store images, group them by emotion classes
+## Folder to store images, group them by emotion classes
