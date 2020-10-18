@@ -1,14 +1,33 @@
-# Image-Emotion-Classification
-Update in progress
+# Where is the emotion? Dissecting a multi-gap network for image emotion classification 
+Code written in *Tensorflow.keras*
 
-Where is the emotion? Dissecting  a multi-gap network for image emotion classification
+**Description**
+Classify emotion into 8 emotion categories.
 
-Dataset
+**Architecture**
+<INSERT MG network>
+Details at *research_paper.pdf*
 
-FI https://www.cs.rochester.edu/u/qyou/deepemotion/ 
+**Late Fusion Method**
+<INSERT Late Fusion image>
+**Results**
+<insert result table /confusion matrix>
 
-WEBEmo https://rpand002.github.io/emotion.html
+**Train**
+1. Download FI dataset https://www.cs.rochester.edu/u/qyou/deepemotion/ 
+2. Store images in `data` folder groupby emotion classes.
+2. Split data with `'split_data.py'`
+3. Run `object.py` and `places.py` (Change directory to `training_models` folder)
+4. Run `late_fusion2.py` (Switch directory to `training_models` folder)
 
-FI weights: https://drive.google.com/drive/folders/1Gm5fyY8bthkENOsTxR9oe08r15wc7vyV?usp=sharing
+**Use Pretrained Models**
+1. Download *FI pretrained weights* https://drive.google.com/drive/folders/1Gm5fyY8bthkENOsTxR9oe08r15wc7vyV?usp=sharing, Store them in 'pretrained_models' folder
+2. Store test images in 'data/test' folder.
+3. Run 'late_fusion2.py'
 
-WEBEmo weights: https://drive.google.com/drive/folders/1-4bFa3fy5f-CODq63Snt1-ukZYFWMmBv?usp=sharing
+**Demo**
+1. !pip install streamlit
+2. Run `demo.py` script with command `streamlit run demo.py`
+
+**Acknowledgement**
+Part of this code is borrowed from https://github.com/GKalliatakis/Keras-VGG16-places365 respository.
