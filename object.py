@@ -31,7 +31,6 @@ EPOCHS=50
 
 ## Functions 
 def data_generator():
-
     train_datagen = ImageDataGenerator( 
           horizontal_flip=True,
           vertical_flip=True,
@@ -62,7 +61,6 @@ def data_generator():
     return train_generator,validation_generator,testing_generator
 
 def compile_and_train(model,MODEL_NAME):
-    
     model.compile(loss='categorical_crossentropy',
                   optimizer=optimizers.SGD(lr=0.001),
                   metrics=['acc'])
@@ -81,7 +79,6 @@ def compile_and_train(model,MODEL_NAME):
           callbacks = [checkpoint,early_stop])
     
 def predict_result(model,testing_generator):
-    
     model=load_model(model)
     fnames = testing_generator.filenames
     ground_truth = testing_generator.classes
@@ -95,21 +92,17 @@ def predict_result(model,testing_generator):
     accuracy= round((100-((len(errors)/testing_generator.samples)*100)), 2)
     print("No of errors = {}/{}".format(len(errors),testing_generator.samples))
     print('Accuracy : ',accuracy , '%')
-    
     return accuracy    
 
-def create_object_basic_model():
-    
+def create_object_basic_model():   
     MobileNet_model = MobileNet(weights='imagenet', include_top=False, input_shape=(IMAGE_SIZE, IMAGE_SIZE, 3))
     MobileNet_model_out = MobileNet_model.get_layer('conv_pw_13_relu').output
     MobileNet_model_out= GlobalAveragePooling2D()(MobileNet_model_out)
     MobileNet_model_out = Dense(8, activation='softmax')(MobileNet_model_out)
-    model = Model(inputs=MobileNet_model.input, outputs=MobileNet_model_out)
-    
+    model = Model(inputs=MobileNet_model.input, outputs=MobileNet_model_out)  
     return model 
 
 def create_object_mg_model(best_object_basic_model):
-    
     model=load_model(best_object_basic_model)
     MobileNet_model_out = model.get_layer('conv_pw_1_relu').output
     conv_1 = Conv2D(filters=64, kernel_size=(1,1), strides=(1, 1), padding='valid', data_format=None, dilation_rate=(1, 1), activation=None, use_bias=True, kernel_initializer='glorot_uniform', bias_initializer='zeros', kernel_regularizer=None, bias_regularizer=None, activity_regularizer=None, kernel_constraint=None, bias_constraint=None)(MobileNet_model_out)
@@ -134,7 +127,6 @@ def create_object_mg_model(best_object_basic_model):
     merge = average([branch_1_out,branch_2_out,branch_3_out,branch_4_out,branch_5_out])
     output = Dense(8, activation='softmax')(merge)
     model = Model(inputs=model.input, outputs=[output])
-    
     return model 
 
 ### main -----------------------------------------------------------------------------
